@@ -1,0 +1,22 @@
+{
+  "name": "Java Servlet + Maven DevContainer",
+  "image": "maven:3.9.6-eclipse-temurin-17",
+  "customizations": {
+    "vscode": {
+      "settings": {
+        // Disables the built-in AI Chat view and features
+        "chat.disableAIFeatures": true,
+        // Disables inline suggestions (ghost text) specifically
+        "github.copilot.editor.enableAutoCompletions": false
+      },
+      "extensions": [
+        "redhat.vscode-community-server-connector",
+        // The '-' prefix opts-out of these extensions even if students have them globally
+        "-github.copilot",
+        "-github.copilot-chat"
+      ]
+    }
+  },
+  "forwardPorts": [8080],
+  "postCreateCommand": "bash .devcontainer/setup-tomcat.sh"
+}
